@@ -5,28 +5,36 @@ export const ProductsContext = createContext();
 
 const ProductProvider = ({ children }) => {
   const [items, setItems] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const getData = async () => {
-    let api = "https://dummyjson.com/products";
+    setIsLoading(true);
+    let api = "http://localhost:3000/clothes";
     try {
       const response = await axios.get(api);
-      setItems(response.data.products);
+      setItems(response.data);
+      setIsLoading(false);
     } catch (error) {
       console.log(error);
+      setIsLoading(false);
     }
   };
   useEffect(() => {
     getData();
   }, []);
 
-  // const Deleted = (id)=>{
-  //   const NewData = items.filter((value)=>{value.id !== id})
-  //   setItems(NewData)
-  // }
+  const Deleted = (id) => {
+    const NewData = items.filter((value) => {
+      value.id !== id;
+    });
+    setItems(NewData);
+  };
 
-  const Update = async (id) => {
+  const Update = async (product) => {
     try {
-      const response = await axios.put("/api/products/" + id, {
-      });
+      const response = await axios.put(
+        "http://localhost:3000/clothes/" + product.id,
+        product
+      );
       setItems((prevItems) =>
         prevItems.map((item) => (item.id === id ? response.data : item))
       );
@@ -35,7 +43,7 @@ const ProductProvider = ({ children }) => {
     }
   };
   return (
-    <ProductsContext.Provider value={{ items, Update }}>
+    <ProductsContext.Provider value={{ items, Update, isLoading }}>
       {children}
     </ProductsContext.Provider>
   );
