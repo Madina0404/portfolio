@@ -29,21 +29,20 @@ const ProductProvider = ({ children }) => {
     setItems(NewData);
   };
 
-  const Update = async (product) => {
+  const Delete = async (id) => {
     try {
-      const response = await axios.put(
-        "http://localhost:3000/clothes/" + product.id,
-        product
+      const response = await axios.delete(
+        "http://localhost:3000/clothes/" + id
       );
-      setItems((prevItems) =>
-        prevItems.map((item) => (item.id === id ? response.data : item))
-      );
+      // Filter state 
     } catch (error) {
       console.error(error);
     }
   };
   return (
-    <ProductsContext.Provider value={{ items, Update, Deleted, isLoading }}>
+    <ProductsContext.Provider
+      value={{ items, Deleted, Delete, isLoading }}
+    >
       {children}
     </ProductsContext.Provider>
   );

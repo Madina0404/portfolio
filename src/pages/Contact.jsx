@@ -6,7 +6,7 @@ import { BasketContext } from "../context/BasketContext";
 const Contact = () => {
   const { items, Update, isLoading } = useContext(ProductsContext);
   const { getBasketData } = useContext(BasketContext);
-  console.log(isLoading);
+
 
   return (
     <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 m-auto">
@@ -31,6 +31,12 @@ const Contact = () => {
                 className="bg-blue-500 text-white p-2 rounded-md"
               >
                 Update
+              </button>
+              <button
+                onClick={() => Delete(item.id)}
+                className="bg-red-500 text-white p-2 rounded-md"
+              >
+                Delete
               </button>
               <button
                 onClick={() => getBasketData(item)}
