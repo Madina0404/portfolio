@@ -1,8 +1,6 @@
-import React, { useContext, useState } from "react";
-import { BasketContext } from "../context/BasketContext";
+import React, {  useState } from "react";
 
 const Karzinka = () => {
-  const { basket, DeleteProduct } = useContext(BasketContext);
   const [name] = useState();
 
   return (
@@ -12,7 +10,7 @@ const Karzinka = () => {
         <div>
           <h2>karzinka</h2>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 m-auto">
-            {basket.map((item) => {
+            {/* {basket.map((item) => {
               return (
                 <div key={item.id}>
                   <img src={item.thumbnail} alt="" />
@@ -20,7 +18,6 @@ const Karzinka = () => {
                   <div className="flex justify-between p-2 gap-4 items-center">
                     <b>{item.price}</b>
                     <button
-                      onClick={() => DeleteProduct(item)}
                       className="bg-red-500 text-white p-2 rounded-lg"
                     >
                       Delete
@@ -28,7 +25,7 @@ const Karzinka = () => {
                   </div>
                 </div>
               );
-            })}
+            })} */}
           </div>
         </div>
       )}

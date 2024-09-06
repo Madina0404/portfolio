@@ -1,5 +1,4 @@
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
-import { ProductsContext } from "../context/ProductsContext";
 import React, { useContext } from "react";
 const Search = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -12,7 +11,6 @@ const Search = () => {
     setSearchParams({ search: info });
     navigator(`/search?q=${info}`);
   };
-  const { items } = useContext(ProductsContext);
   return (
     <form autoComplate="off" onSubmit={handleSearch} className="my-4">
       <input

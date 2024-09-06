@@ -9,7 +9,6 @@ import Search from './components/Search'
 import SearchPage from './pages/SearchPage'
 import Karzinka from './pages/Karzinka'
 import AddProduct from './pages/AddProduct'
-import UpdateProduct from './pages/UpdateProduct'
 const App = () => {
 
 
@@ -25,7 +24,6 @@ const App = () => {
         <Route path='/search' element={<SearchPage/>}/>
         <Route path='/karzinka' element={<Karzinka/>}/>
         <Route path='/add-product' element={<AddProduct />} />
-        <Route path='/Update-product' element={<UpdateProduct />} />
         <Route path='*' element={<h1 className='text-red-600 text-[40px] ml-[500px]'>Page not found!</h1>}/>
       </Routes>
     </div>

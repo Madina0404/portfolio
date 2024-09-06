@@ -1,6 +1,21 @@
 import axios from "axios";
+import { useMutation } from "react-query";
+import ProductServices from "../services/ProductSevices";
+import { data } from "autoprefixer";
 
 export default function AddProduct() {
+    const mutation = useMutation({
+        mutationFn: ProductServices.addProduct,
+        onSuccess: data => {
+            console.log(data);
+            alert("success")
+        },
+        onError: err => {
+            console.log(err);
+            alert("Error")
+        }
+    })
+
     const submitHandler = async e => {
         const payload = {
             name: e.target[0].value,
@@ -11,13 +26,7 @@ export default function AddProduct() {
         e.preventDefault();
         console.log(payload);
 
-        try {
-            const res = await axios.post("http://localhost:3000/clothes", payload)
-            console.log(res);
-            alert("submitted")
-        } catch (error) {
-            console.log("Error while submitting: ",error);
-        }
+        mutation.mutate(payload)
     }
   return (
     <div className="container">
