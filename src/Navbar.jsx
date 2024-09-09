@@ -9,7 +9,6 @@ const Navbar = () => {
       <NavLink className={'border-b-2 border-transparent'} to={"/About"}>About</NavLink>
       <NavLink className={'border-b-2 border-transparent'} to={"/Contact"}>Product</NavLink>
       <NavLink className={'border-b-2 border-transparent'} to={"/add-product"}>Add product</NavLink>
-      <NavLink className={'border-b-2 border-transparent'} to={"/Update-product"}>Update</NavLink>
       <NavLink className={'border-b-2 border-transparent'} to={'/Karzinka'}>karzinka</NavLink>
     </nav>
   )

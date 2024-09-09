@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useMutation } from "react-query";
 import ProductServices from "../services/ProductSevices";
-import { data } from "autoprefixer";
 
 export default function AddProduct() {
     const mutation = useMutation({
