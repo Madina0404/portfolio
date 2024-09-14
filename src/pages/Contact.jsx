@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useQuery, useMutation, useQueryClient } from "react-query";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ProductServices from "../services/ProductSevices";
 const Contact = () => {
   const [modalShow, setModalShow] = useState(false);
@@ -8,6 +8,7 @@ const Contact = () => {
   const [updateModal, setUpdateModal] = useState(false);
   const queryClient = useQueryClient();
 
+  const navigate = useNavigate()
   const {
     data: products,
     isLoading,
@@ -66,7 +67,7 @@ const Contact = () => {
           </Link>
           <div className="flex gap-2">
             <button
-              onClick={() => Update(item.id)}
+              onClick={() => navigate(`/update/${item.id}`)}
               className="bg-blue-500 text-white p-2 rounded-md"
             >
               Update
@@ -103,7 +104,7 @@ const Contact = () => {
         </div>
       )}
 
-      {updateModal && (
+      {/* {updateModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
           <div className="bg-white p-4 rounded-md shadow-lg">
             <div className="flex justify-end gap-2 mt-4">
@@ -151,7 +152,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
-      )}
+      )} */}
     </div>
   );
 };
