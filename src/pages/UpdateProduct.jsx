@@ -1,11 +1,12 @@
 import { useMutation, useQuery, useQueryClient } from "react-query";
 
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
 import ProductServices from "../services/ProductSevices";
 
 export default function UpdateProduct() {
   const params = useParams();
+  const navigate = useNavigate()
 
   // Usually I use query for GET Requests
   const productData = useQuery({
@@ -18,12 +19,14 @@ export default function UpdateProduct() {
   const mutation = useMutation({
     mutationFn: ProductServices.updateOne,
     onSuccess: data => {
-      console.log(data);
+      console.log(data);  
+      navigate("/Contact")
     },
     
   });
 
   const submitHandler = async (e) => {
+    console.log(e);
     e.preventDefault();
 
     const payload = {

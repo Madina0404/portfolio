@@ -10,17 +10,9 @@ import SearchPage from "./pages/SearchPage";
 import Karzinka from "./pages/Karzinka";
 import AddProduct from "./pages/AddProduct";
 import UpdateProduct from "./pages/UpdateProduct";
-import { useForm } from "react-hook-form";
 
 const App = () => {
   const [open, setOpen] = useState(); 
-  const { register, handleSubmit, watch, formState: { errors } } = useForm();
-  const [submittedData, setSubmittedData] = useState(null); 
-
-  const onSubmit = (data) => {
-    console.log(data);
-    setSubmittedData(data);
-  };
 
   return (
     <div className="max-w-[1200px] m-auto">

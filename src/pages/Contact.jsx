@@ -55,11 +55,11 @@ const Contact = () => {
     <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 m-auto">
       {products?.items?.map((item) => (
         <div
-          className="shadow-lg p-2 rounded-md shadow-blue-500/50 m-auto"
+          className="shadow-lg p-2 rounded-md shadow-purple-500/50 m-auto w-[100%] h-[100%]"
           key={item.id}
         >
-          <Link to={`/contact/${item.id}`}>
-            <img src={item.image} alt={item.name} />
+          <Link to={`/contact/${item.id}`} className="">
+            <img src={item.image} className="w-[100%] h-[250px] box-border" alt={item.name} />
             <div>
               <h1>{item.name}</h1>
               <b>{item.price}</b>
@@ -68,7 +68,7 @@ const Contact = () => {
           <div className="flex gap-2">
             <button
               onClick={() => navigate(`/update/${item.id}`)}
-              className="bg-blue-500 text-white p-2 rounded-md"
+              className="bg-purple-500 text-white p-2 rounded-md"
             >
               Update
             </button>

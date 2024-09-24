@@ -14,7 +14,7 @@ const DynamicPage = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://dummyjson.com/products/${params.id}`
+          `http://localhost:3000/clothes${params.id}`
         );
         setWrap(response.data);
       } catch (error) {

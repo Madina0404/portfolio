@@ -12,15 +12,15 @@ const Search = () => {
     navigator(`/search?q=${info}`);
   };
   return (
-    <form autoComplate="off" onSubmit={handleSearch} className="my-4">
+    <form autoComplate="off" onSubmit={handleSearch} className="my-4 flex">
       <input
         placeholder="text"
-        className="w-[1000px] px-10 py-1 rounded-sm border-2 outline-none text-purple-700 border-purple-700"
+        className="w-[100%] px-10 py-1 rounded-sm border-2 outline-none text-purple-700 border-purple-700"
         type="text"
         name="poisc"
         defaultValue={Default}
       />
-      <button className="border px-[60px] py-1 rounded-sm border-purple-700 text-purple-700">
+      <button className="border px-[30px] sm:px-[60px] py-1 rounded-sm border-purple-700 text-purple-700">
         search
       </button>
     </form>
