@@ -8,3 +8,15 @@
 li{
   list-style: none;
 }
+.active {
+  color: white;
+}
+
+.nav-link {
+  transition: color 0.3s ease; /* Add a transition for the color change */
+}
+.banner {
+  background-image: url('https://i.imgur.com/exampleImageURL.jpg');
+}
+
+
