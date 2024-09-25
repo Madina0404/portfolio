@@ -12,7 +12,7 @@ const Search = () => {
     navigator(`/search?q=${info}`);
   };
   return (
-    <form autoComplate="off" onSubmit={handleSearch} className="my-4 flex">
+    <form autoComplate="off" onSubmit={handleSearch} className="my-4 mx-auto flex max-w-[1200px]">
       <input
         placeholder="text"
         className="w-[100%] px-10 py-1 rounded-sm border-2 outline-none text-purple-700 border-purple-700"

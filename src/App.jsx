@@ -17,13 +17,12 @@ const App = () => {
 
   return (
     <div>
-        <Navbar />
-      <div className="max-w-[1200px] m-auto">
-        {!open && (
-          <>
-            <Search />
-            <Routes>
-              <Route path="/" element={<Home />} />
+      <Navbar />
+      {!open && (
+        <>
+          <Search />
+          <Routes>
+            <Route path="/" element={<Home />} />
               <Route path="/About" element={<About />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/contact/:id" element={<DynamicPage />} />
@@ -31,18 +30,17 @@ const App = () => {
               <Route path="/karzinka" element={<Karzinka />} />
               <Route path="/add-product" element={<AddProduct />} />
               <Route path="/update/:id" element={<UpdateProduct />} />
-              <Route
-                path="*"
-                element={
-                  <h1 className="text-red-600 text-[40px] ml-[500px]">
-                    Page not found!
-                  </h1>
-                }
-              />
-            </Routes>
-          </>
-        )}
-      </div>
+            <Route
+              path="*"
+              element={
+                <h1 className="text-red-600 text-[40px] ml-[500px]">
+                  Page not found!
+                </h1> 
+              }
+            />
+          </Routes>
+        </>
+      )}
     </div>
   );
 };

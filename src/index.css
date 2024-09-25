@@ -13,10 +13,33 @@ li{
 }
 
 .nav-link {
-  transition: color 0.3s ease; /* Add a transition for the color change */
+  transition: color 0.3s ease;
 }
 .banner {
-  background-image: url('https://i.imgur.com/exampleImageURL.jpg');
+  background-image: url('https://media.istockphoto.com/id/1060839462/photo/abstract-blur-purple-color-tone-background-with-glowing-light-effect-for-design-element-as.jpg?s=612x612&w=0&k=20&c=uCQuLb-qT9rpH8G9au4HEgfIbQY68uRlZiMyze4YDqg=');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  opacity: 0; 
+  transform: translateX(-100%); 
+  transition: opacity 2s ease, transform 1s ease; 
 }
+
+.banner.active {
+  opacity: 1; 
+  transform: translateX(0);
+}
+
+.card {
+  opacity: 0;
+  transform: translateY(20px); 
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.card.visible {
+  opacity: 1; 
+  transform: translateY(0); 
+}
+
 
 
